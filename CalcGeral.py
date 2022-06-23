@@ -1,21 +1,18 @@
-from ast import While
-from asyncio import sleep
-
-
 def CalcPadrao():
+    print()
     num1 = int(input("Digite o primeiro numero: "))
     sinal = input("Qual operacao você deseja ( + | - | * | / |): ")
     num2 = int(input("Digite o segundo numero: "))
     print()
 
-    if num1 & num2 != int:
+    if num1 & num2 == str:
         print("Erro digite um numero por favor!")
 
     else:
         if sinal == "+":
             resultado = (num1 + num2)
             print(num1, " + ", num2, " = ", resultado)
-
+                
         elif sinal == "-":
             resultado = int(num1 - num2)
             print(num1, " - ", num2, " = ", resultado)
@@ -30,17 +27,16 @@ def CalcPadrao():
             else:
                 resultado = int(num1 / num2)
                 print(num1, "/", num2, " = ", resultado)
-
+            
         else:
             print("Erro! Digite uma operacao valida")
-
 
 def CalcQuadrado():
     print()
     L = int(input("Digite o valor do lado do quadrado: "))
-
+    print()
     print("O valor do perimetro do quadrado é ", L*4)
-    print("\nE o valor da area do quadrado é ", L*L)
+    print("E o valor da area do quadrado é ", L*L)
 
 
 def CalcRetang():
@@ -77,49 +73,59 @@ def CalcTrape():
     H = int(input("Digite o valor da altura: "))
     print()
     area = ((B + b) * H) / 2
-    print("O valor da area do trapézio é ", area)
+    if(b>B):
+        print("Impossivel calcular, tente novamente")
+    else:
+        print("O valor da area do trapézio é ", area)
 
 
 def Sair():
     print("Saindo...")
-    sleep(3)
     exit()
 
+resp = 's'
+while resp =='s':
+    print()
+    print("Calculadora Geral")
+    print()
 
-print()
-print("Calculadora Geral")
-print()
-
-print("1. Calculadora Padrao")
-print("2. Calculadora de Quadrados")
-print("3. Calculadora de Retangulos")
-print("4. Calculadora de Triangulos")
-print("5. Calculadora de Circulos")
-print("6. Calculadora de Trapézios")
-print("7. Sair")
-print()
-Calc = int(input("Escolha uma dessas calculadoras: "))
+    print("1. Calculadora Padrao")
+    print("2. Calculadora de Quadrados")
+    print("3. Calculadora de Retangulos")
+    print("4. Calculadora de Triangulos")
+    print("5. Calculadora de Circulos")
+    print("6. Calculadora de Trapézios")
+    print("7. Sair")
+    print()
+    Calc = int(input("Escolha uma dessas opcoes: "))
 
 
-if(Calc == 1):
-    CalcPadrao()
+    if(Calc == 1):
+        CalcPadrao()
 
-elif(Calc == 2):
-    CalcQuadrado()
+    elif(Calc == 2):
+        CalcQuadrado()
 
-elif(Calc == 3):
-    CalcRetang()
+    elif(Calc == 3):
+        CalcRetang()
 
-elif(Calc == 4):
-    CalcTriang()
+    elif(Calc == 4):
+        CalcTriang()
 
-elif(Calc == 5):
-    CalcCirc()
+    elif(Calc == 5):
+        CalcCirc()
 
-elif(Calc == 6):
-    CalcTrape()
+    elif(Calc == 6):
+        CalcTrape()
 
-elif(Calc == 7):
-    Sair()
+    elif(Calc == 7):
+        Sair()
 
-resp = input("Quer rodar novamente (s/n): ")
+    else:
+        print("Calc invalido! tente novamente!")
+
+    print()
+    if(Calc != 7):
+        resp = input("Quer rodar novamente (s/n): ")
+    else:
+        print("")
