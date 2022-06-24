@@ -1,3 +1,6 @@
+import os
+
+
 def CalcPadrao():
     print()
     num1 = int(input("Digite o primeiro numero: "))
@@ -83,11 +86,12 @@ def Sair():
     print("Saindo...")
     exit()
 
+
+
 resp = 's'
-while resp =='s':
-    print()
-    print("Calculadora Geral")
-    print()
+while resp =='s' or resp == 'S':
+    os.system('cls')
+    print("\nCalculadora Geral\n")
 
     print("1. Calculadora Padrao")
     print("2. Calculadora de Quadrados")
@@ -95,37 +99,39 @@ while resp =='s':
     print("4. Calculadora de Triangulos")
     print("5. Calculadora de Circulos")
     print("6. Calculadora de Trapézios")
-    print("7. Sair")
-    print()
-    Calc = int(input("Escolha uma dessas opcoes: "))
+    print("7. Sair\n")
+    Calc = input("Escolha uma dessas opcoes: ")
 
 
-    if(Calc == 1):
+    if(Calc == '1'):
         CalcPadrao()
 
-    elif(Calc == 2):
+    elif(Calc == '2'):
         CalcQuadrado()
 
-    elif(Calc == 3):
+    elif(Calc == '3'):
         CalcRetang()
 
-    elif(Calc == 4):
+    elif(Calc == '4'):
         CalcTriang()
 
-    elif(Calc == 5):
+    elif(Calc == '5'):
         CalcCirc()
 
-    elif(Calc == 6):
+    elif(Calc == '6'):
         CalcTrape()
 
-    elif(Calc == 7):
+    elif(Calc == '7'):
         Sair()
 
     else:
         print("Calc invalido! tente novamente!")
 
     print()
-    if(Calc != 7):
+    if(Calc != '7'):
         resp = input("Quer rodar novamente (s/n): ")
+        if(resp != 'n' or resp != 'N' or resp != 'S' or resp != 's'):
+            print("\nDigite s ou n!!!")
+            
     else:
         print("")
